@@ -5,7 +5,9 @@ require('dotenv').config()
 // const axios = require('axios');
 const { Client } =require('pg') ;
 //postgres://username:password@localhost:5432/darabasename
-const url =`postgres://raniaalbliwi:9962@localhost:5432/demo`
+// const url =`postgres://raniaalbliwi:9962@localhost:5432/demo`
+const url ='postgres://fmqghxwx:4zGCjLsEoNH4AMbaPsxAG6ayoYch2BL6@baasu.db.elephantsql.com/fmqghxwx'
+
 const client = new Client(url)
 
 const bodyParser = require('body-parser')
@@ -92,4 +94,6 @@ client.connect().then(()=>{
     app.listen(port,()=>{
         console.log(`listening on port ${port}`);
     });
-}).catch()
+}).catch(err=>{
+    console.error(err);
+})
