@@ -6,7 +6,7 @@ require('dotenv').config()
 const { Client } =require('pg') ;
 //postgres://username:password@localhost:5432/darabasename
 // const url =`postgres://raniaalbliwi:9962@localhost:5432/demo`
-const url ='postgres://fmqghxwx:4zGCjLsEoNH4AMbaPsxAG6ayoYch2BL6@baasu.db.elephantsql.com/fmqghxwx'
+const url =process.env.DATABASE_URL
 
 const client = new Client(url)
 
@@ -14,7 +14,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 const cors = require('cors');
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 
 //routes
